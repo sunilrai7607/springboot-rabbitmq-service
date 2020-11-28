@@ -1,0 +1,21 @@
+version: '3'
+services:
+  rabbitmq-server:
+    image: rabbitmq
+    hostname: localhost
+    volumes:
+      - ./.docker/rabbitmq/etc/:/etc/rabbitmq/
+      - ./.docker/rabbitmq/data/:/var/lib/rabbitmq/
+      - ./.docker/rabbitmq/logs/:/var/log/rabbitmq/
+    environment:
+      #RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - spring-boot-profile-network
+networks:
+  spring-boot-profile-network:
+    driver: bridge

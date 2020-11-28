@@ -1,0 +1,12 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+rabbitmq:
+  enabled: true
+  queueName: devglan.queue
+  exchangeName: devglan.exchange
+  routingKey: devglan.routingkey
