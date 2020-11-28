@@ -11,6 +11,7 @@ Exchange types
 * Direct
 * Fanout
 * Topic
+
 * Headers
 
 application.yml to add this configuration
